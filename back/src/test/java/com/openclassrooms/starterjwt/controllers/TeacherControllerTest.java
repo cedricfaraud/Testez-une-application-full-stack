@@ -40,11 +40,14 @@ public class TeacherControllerTest {
     void setUp() {
         controller = new TeacherController(teacherService, teacherMapper);
         teachers = new ArrayList<>();
-        teacher = Teacher.builder()
-                .id(1L)
-                .firstName(TEACHER_FIRST_NAME)
-                .lastName(TEACHER_LAST_NAME)
-                .build();
+
+        teacher = new Teacher();
+        teacher.setFirstName(TEACHER_FIRST_NAME);
+        teacher.setLastName(TEACHER_LAST_NAME);
+        teacher.setId(1L);
+        teacher.setCreatedAt(null);
+        teacher.setUpdatedAt(null);
+
         teachers.add(teacher);
         teachers.add(new Teacher(2L, "Yoga", "Julie", null, null));
         teachers.add(new Teacher(3L, "Sport", "Sophie", null, null));

@@ -20,30 +20,28 @@ Launch Front-end:
 
 > npm run start;
 
-
 ## Ressources
 
-### Mockoon env 
+### Mockoon env
 
 ### Postman collection
 
 For Postman import the collection
 
-> ressources/postman/yoga.postman_collection.json 
+> ressources/postman/yoga.postman_collection.json
 
-by following the documentation: 
+by following the documentation:
 
 https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman
-
 
 ### MySQL
 
 SQL script for creating the schema is available `ressources/sql/script.sql`
 
 By default the admin account is:
+
 - login: yoga@studio.com
 - password: test!1234
-
 
 ### Test
 
@@ -53,7 +51,7 @@ Launching e2e test:
 
 > npm run e2e
 
-Generate coverage report (you should launch e2e test before):
+Generate coverage report (you should launch coverage.cy.ts test before):
 
 > npm run e2e:coverage
 
@@ -70,3 +68,9 @@ Launching test:
 for following change:
 
 > npm run test:watch
+
+Generate coverage report:
+> npm run test:coverage
+
+> Report is available here:
+> front/coverage/jest/lcov-report/index.html

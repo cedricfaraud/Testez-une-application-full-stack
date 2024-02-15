@@ -41,16 +41,15 @@ public class UserControllerTest {
 
     @BeforeEach
     void setUp() {
-        user = User.builder()
-                .id(1L)
-                .firstName(FIRSTNAME)
-                .lastName(LASTNAME)
-                .email(EMAIL)
-                .password(PASSWORD)
-                .admin(true)
-                .createdAt(LocalDateTime.now())
-                .updatedAt(LocalDateTime.now())
-                .build();
+        user = new User();
+        user.setId(1L);
+        user.setFirstName(FIRSTNAME);
+        user.setLastName(LASTNAME);
+        user.setEmail(EMAIL);
+        user.setPassword(PASSWORD);
+        user.setAdmin(true);
+        user.setCreatedAt(LocalDateTime.now());
+        user.setUpdatedAt(LocalDateTime.now());
         userDto = new UserDto(1L, EMAIL, LASTNAME, FIRSTNAME, true, PASSWORD, LocalDateTime.now(), LocalDateTime.now());
         controller = new UserController(userService, userMapper);
     }

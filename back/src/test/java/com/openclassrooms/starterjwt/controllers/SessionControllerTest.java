@@ -60,28 +60,14 @@ public class SessionControllerTest {
                 .firstName(TEACHER_FIRST_NAME)
                 .lastName(TEACHER_LAST_NAME)
                 .build();
-        user = User.builder()
-                .id(1L)
-                .firstName(FIRSTNAME)
-                .lastName(LASTNAME)
-                .email(EMAIL)
-                .password(PASSWORD)
-                .admin(true)
-                .createdAt(LocalDateTime.now())
-                .updatedAt(LocalDateTime.now())
-                .build();
+        user = new User(EMAIL, LASTNAME, FIRSTNAME, PASSWORD, false);
+        user.setId(1L);
+
         users = new ArrayList<User>();
         users.add(user);
-        session = Session.builder()
-                .id(1L)
-                .name(SESSION)
-                .teacher(teacher)
-                .date(Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC)))
-                .description(SESSION_DESCRIPTION)
-                .createdAt(null)
-                .updatedAt(null)
-                .users(users)
-                .build();
+        session = new Session(1L, FIRSTNAME, Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC)),
+                SESSION_DESCRIPTION, teacher, users, null, null);
+
         sessionDto = new SessionDto(1L, SESSION, Date.from(LocalDateTime.now().toInstant(ZoneOffset.UTC)), 1L,
                 SESSION_DESCRIPTION, users.stream().map(User::getId).collect(Collectors.toList()), null, null);
     }

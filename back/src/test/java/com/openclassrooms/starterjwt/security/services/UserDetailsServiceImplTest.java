@@ -34,16 +34,7 @@ public class UserDetailsServiceImplTest {
     @Test
     void testLoadUserByUsername() {
 
-        User user = User.builder()
-                .id(1L)
-                .firstName(FIRSTNAME)
-                .lastName(LASTNAME)
-                .email(EMAIL)
-                .password(PASSWORD)
-                .admin(true)
-                .createdAt(LocalDateTime.now())
-                .updatedAt(LocalDateTime.now())
-                .build();
+        User user = new User(1L, EMAIL, LASTNAME, FIRSTNAME, PASSWORD, false, LocalDateTime.now(), LocalDateTime.now());
 
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(user));
 

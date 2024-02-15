@@ -54,6 +54,12 @@ public class UserServiceTest {
         assertThat(result.isAdmin()).isTrue();
     }
 
+    @Test
+    void testFindById_KO() {
+        Long id = 1L;
+        assertThat(userService.findById(id)).isNull();
+    }
+
     private User getUser(Long id) {
         return User.builder()
                 .id(id)
