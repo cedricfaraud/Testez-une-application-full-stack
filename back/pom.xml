@@ -114,7 +114,6 @@
 				<configuration>
 					<excludes>
 						<exclude>com/openclassrooms/**/*Dto.*</exclude>
-						<exclude>com/openclassrooms/starterjwt/SpringBootSecurityJwtApplication.*</exclude>
 					</excludes>
 				</configuration>
 				<executions>

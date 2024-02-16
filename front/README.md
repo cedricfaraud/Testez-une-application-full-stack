@@ -49,9 +49,9 @@ By default the admin account is:
 
 Launching e2e test:
 
-> npm run e2e
+> npm run e2e:ci
 
-Generate coverage report (you should launch coverage.cy.ts test before):
+Generate coverage report (you should launch the test command before):
 
 > npm run e2e:coverage
 
