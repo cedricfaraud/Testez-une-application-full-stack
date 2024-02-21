@@ -1,4 +1,6 @@
 # Yoga App !
+App install : 
+> mvn clean install
 
 For launch and generate the jacoco code coverage:
 
